@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amar Panika | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* Navigation Bar */
+
+        header {
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #00adb5;
+        }
+
+        /* Home */
+
+        #home {
+            min-height: 90vh;
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .home-text h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .home-text h2 {
+            color: #00adb5;
+            margin-bottom: 20px;
+        }
+
+        .home-text .intro {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+
+            background-color: #00adb5;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #008b91;
+        }
+
+        /* Profile Circle */
+
+        .profile {
+            width: 250px;
+            height: 250px;
+
+            background-color: #222;
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 65px;
+            font-weight: bold;
+        }
+
+        /* Common Section */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+
+        .about-box {
+            max-width: 800px;
+            margin: auto;
+
+            background-color: white;
+            padding: 30px;
+
+            border-radius: 10px;
+
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Education */
+
+        .education {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .education-card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+
+            border-left: 5px solid #00adb5;
+
+            border-radius: 5px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #555;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: #00adb5;
+        }
+
+        /* Hobby */
+
+        .hobby-box {
+            max-width: 600px;
+            margin: auto;
+
+            background-color: white;
+            padding: 35px;
+
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .chess {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hobby-box h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+
+            background-color: white;
+            padding: 30px;
+
+            border-radius: 10px;
+
+            line-height: 2;
+        }
+
+        .contact-box a {
+            color: #008b91;
+            text-decoration: none;
+        }
+
+        .contact-box button {
+            margin-top: 15px;
+            padding: 12px 25px;
+
+            border: none;
+            border-radius: 5px;
+
+            background-color: #00adb5;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .contact-box button:hover {
+            background-color: #008b91;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #home {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .home-text h1 {
+                font-size: 40px;
+            }
+
+            .profile {
+                width: 180px;
+                height: 180px;
+                font-size: 50px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Amar Panika
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobby">Hobby</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Home -->
+
+    <section id="home">
+
+        <div class="home-text">
+
+            <p>Hello, I'm</p>
+
+            <h1>Amar Panika</h1>
+
+            <h2>M.Tech IT Student</h2>
+
+            <p class="intro">
+                I am an M.Tech Integrated Course student at
+                IIPS, DAVV, Indore. I am interested in
+                technology, programming and web development.
+            </p>
+
+            <a href="#contact" class="btn">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="profile">
+            AP
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-box">
+
+            <p>
+                My name is Amar Panika. I am currently pursuing
+                an M.Tech Integrated Course in Information
+                Technology at the International Institute of
+                Professional Studies (IIPS), DAVV, Indore.
+
+                I am currently in my second year. I am interested
+                in learning programming and web technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <h3>
+                    M.Tech Integrated Course
+                </h3>
+
+                <p>
+                    International Institute of Professional
+                    Studies (IIPS), DAVV, Indore
+                </p>
+
+                <p>
+                    Second Year
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Class 12th
+                </h3>
+
+                <p>
+                    Jawahar Navodaya Vidyalaya
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Class 10th
+                </h3>
+
+                <p>
+                    Jawahar Navodaya Vidyalaya
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill-card">
+
+                <h3>HTML</h3>
+
+                <p>
+                    Basic knowledge of creating
+                    web page structure.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>CSS</h3>
+
+                <p>
+                    Basic knowledge of web page
+                    styling and layout.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>C / C++</h3>
+
+                <p>
+                    Knowledge of programming
+                    fundamentals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Hobby -->
+
+    <section id="hobby">
+
+        <h2 class="section-title">
+            My Hobby
+        </h2>
+
+        <div class="hobby-box">
+
+            <div class="chess">
+                ♟
+            </div>
+
+            <h3>Playing Chess</h3>
+
+            <p>
+                Chess is one of my favorite hobbies.
+                I enjoy playing chess and improving
+                my problem-solving skills through the game.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-box">
+
+            <p>
+                <strong>Name:</strong>
+                Amar Panika
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Bhawarkuan, Indore
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:amarkumarpanikachaura@gmail.com">
+                    amarkumarpanikachaura@gmail.com
+                </a>
+            </p>
+
+            <button onclick="sayHello()">
+                Say Hello
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Amar Panika | Personal Portfolio
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function sayHello() {
+
+            alert("Hello! Thanks for visiting my portfolio.");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
